@@ -77,11 +77,20 @@ $transport->deliverCargo('RoadCAR');*/
 
 $factory= StaticFactory::build('sms')->send();
 $factory=  StaticFactory::build('email')->send();*/
-use Patterns\Singleton\Singleton;
+/*use Patterns\Singleton\Singleton;
 $singleton1=Singleton::getInstance();
 $singleton1->test+=5;
 $singleton2=Singleton::getInstance();
 $singleton1->test+=1;
 $singleton3=Singleton::getInstance();
-echo $singleton3->test. PHP_EOL;
+echo $singleton3->test. PHP_EOL;*/
+
+//Strategy Pattern
+use Patterns\Strategy\Price;
+$price=new Price(new \Patterns\Strategy\DairyProducts());
+$price2=new  Price(new \Patterns\Strategy\VegetableProducts());
+$price->getPrice();
+$price2->getPrice();
+
+
 ?>
